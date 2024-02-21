@@ -10,8 +10,152 @@
     <div class="w-screen min-h-screen flex justify-center">
       <div class="p-12 rounded-lg shadow-lg w-full max-w-[65%] flex flex-col">
         <div class="w-full flex flex-col">
-          <h1>Title</h1>
-          <p class="my-10">This is the content</p>
+          <header class="bg-blue-500 text-white text-center py-4">
+            <h1 class="text-4xl font-bold">AWS S3 Static Website Hosting</h1>
+          </header>
+
+          <main class="container mx-auto mt-4">
+            <section class="mb-8">
+              <h2 class="text-2xl font-bold mb-4">Overview</h2>
+              <p class="mb-4 w-full bg-gray-100 p-10 rounded-lg">
+                The project involves deploying a static website on Amazon Web
+                Services (AWS) using Amazon S3 for storage, CloudFront for
+                content delivery, and Certificate Manager for securing the
+                website with HTTPS. Optionally we can configure a custom domain
+                to redirect to our s3 bucket.
+              </p>
+            </section>
+
+            <section class="mb-8">
+              <h2 class="text-2xl font-bold mb-4">Architecture Diagram</h2>
+              <img
+                src="./assets/diagram.png"
+                alt="Architecture Diagram"
+                class="w-full"
+              />
+            </section>
+
+            <section class="mb-8">
+              <h2 class="text-2xl font-bold mb-4">Prerequisites</h2>
+              <ol
+                class="list-decimal list-inside w-full bg-gray-100 p-10 rounded-lg"
+              >
+                <li>Website Files.</li>
+                <li>Amazon Web Services (AWS) Account.</li>
+                <li>Domain Name. (Optional)</li>
+                <li>Github Account (Optional)</li>
+              </ol>
+            </section>
+
+            <section class="mb-8">
+              <h2 class="text-2xl font-bold mb-4">AWS Free Tier</h2>
+              <ul class="list-disc list-inside">
+                <li>
+                  <strong>12 months free:</strong>
+                  <ul class="ml-4">
+                    <li>
+                      Amazon S3:
+                      <ul class="ml-4 w-full bg-gray-100 p-10 rounded-lg">
+                        <li>5GB Standard Storage</li>
+                        <li>20K GET Requests / month</li>
+                        <li>2K PUT Reuquests / month</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>Always free:</strong>
+                  <ul class="ml-4">
+                    <li>
+                      Amazon CloudFront:
+                      <ul class="ml-4 w-full bg-gray-100 p-10 rounded-lg">
+                        <li>1TB of Data Transfer / month</li>
+                        <li>10,000,000 HTTP or HTTPS Requests / month</li>
+                      </ul>
+                    </li>
+                    <li>
+                      AWS Certificate Manager:
+                      <ul class="ml-4 w-full bg-gray-100 p-10 rounded-lg">
+                        <li>
+                          Public SSL/TLS certificates provisioned through AWS
+                          Certificate Manager are free.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </section>
+
+            <section class="mb-8">
+              <h2 class="text-2xl font-bold mb-4">Process</h2>
+              <ol class="list-decimal list-inside">
+                <li class="text-xl font-bold mb-2">
+                  S3 Configuration:
+                  <ul
+                    class="ml-4 text-sm font-normal w-full bg-gray-100 p-10 rounded-lg"
+                  >
+                    <li>Create an S3 bucket.</li>
+                    <li>Upload the website files.</li>
+                    <li>Configure the S3 bucket policy for public access.</li>
+                  </ul>
+                </li>
+
+                <li class="text-xl font-bold mb-2">
+                  CloudFront Configuration:
+                  <ul
+                    class="ml-4 text-sm font-normal w-full bg-gray-100 p-10 rounded-lg"
+                  >
+                    <li>Create a CloudFront distribution.</li>
+                    <li>Specify the S3 bucket as the origin.</li>
+                    <li>Configure caching behavior and additional settings.</li>
+                  </ul>
+                </li>
+                <li class="text-xl font-bold mb-2">
+                  Domain and Certificate:
+                  <ul
+                    class="ml-4 text-sm font-normal w-full bg-gray-100 p-10 rounded-lg"
+                  >
+                    <li>Register a domain or use an existing one.</li>
+                    <li>
+                      Request an SSL/TLS certificate from ACM for the custom
+                      domain.
+                    </li>
+                  </ul>
+                </li>
+                <li class="text-xl font-bold mb-2">
+                  Certificate Validation:
+                  <ul
+                    class="ml-4 text-sm font-normal w-full bg-gray-100 p-10 rounded-lg"
+                  >
+                    <li>Complete the ACM certificate validation process.</li>
+                  </ul>
+                </li>
+                <li class="text-xl font-bold mb-2">
+                  CloudFront Update:
+                  <ul
+                    class="ml-4 text-sm font-normal w-full bg-gray-100 p-10 rounded-lg"
+                  >
+                    <li>
+                      Update the CloudFront distribution to use the ACM
+                      certificate for HTTPS.
+                    </li>
+                  </ul>
+                </li>
+                <li class="text-xl font-bold mb-2">
+                  DNS Configuration:
+                  <ul
+                    class="ml-4 text-sm font-normal w-full bg-gray-100 p-10 rounded-lg"
+                  >
+                    <li>
+                      Update DNS records to point to the CloudFront
+                      distribution.
+                    </li>
+                  </ul>
+                </li>
+              </ol>
+            </section>
+          </main>
         </div>
       </div>
     </div>
