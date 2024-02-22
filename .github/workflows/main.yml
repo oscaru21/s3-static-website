@@ -31,4 +31,4 @@ jobs:
           aws-region: ${{ env.AWS_REGION }}
 
       - name: deploy to s3
-        run: aws s3 sync ./dist/ s3://{{ env.MY_BUCKET }}/
+        run: aws s3 sync ./dist/ s3://${{ env.MY_BUCKET }}/
